@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RefactorToNewArchitectureComponents</string>
+    <string name="action_settings">Settings</string>
+    <string name="notes_list_activity_title">My Notes</string>
+    <string name="note_details_activity_title">My Notes</string>
+    <string name="add_your_note">Add Your Note</string>
+    <string name="update_your_note">Update Your Note</string>
+    <string name="ok">OK</string>
+    <string name="cancel">cancel</string>
+</resources>
