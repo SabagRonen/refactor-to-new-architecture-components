@@ -24,11 +24,11 @@
   <include layout="@layout/content_notes"/>
 
   <android.support.design.widget.FloatingActionButton
-      android:id="@+id/fab"
+      android:id="@+id/addNote"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="bottom|end"
       android:layout_margin="@dimen/fab_margin"
-      app:srcCompat="@drawable/ic_add_black"/>
+      app:srcCompat="@drawable/ic_add_black" />
 
 </android.support.design.widget.CoordinatorLayout>

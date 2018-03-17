@@ -38,7 +38,7 @@ public class NotesActivity extends AppCompatActivity implements AddNoteListener,
                 StaggeredGridLayoutManager.VERTICAL));
         notesList.setAdapter(new NotesAdapter(this));
 
-        View fab = findViewById(R.id.fab);
+        View fab = findViewById(R.id.addNote);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
