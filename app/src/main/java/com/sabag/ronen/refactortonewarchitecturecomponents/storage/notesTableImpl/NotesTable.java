@@ -1,4 +1,4 @@
-package com.sabag.ronen.refactortonewarchitecturecomponents.storage;
+package com.sabag.ronen.refactortonewarchitecturecomponents.storage.notesTableImpl;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,10 +7,12 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
+import com.sabag.ronen.refactortonewarchitecturecomponents.storage.INotesTable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class NotesTable implements BaseColumns {
+public class NotesTable implements BaseColumns, INotesTable {
 
     static final int DATABASE_VERSION = 1;
     static final String TABLE_NAME = "NotesTable";
@@ -28,12 +30,14 @@ public class NotesTable implements BaseColumns {
         mDb = mDbHelper.getWritableDatabase();
     }
 
+    @Override
     public void add(NoteData noteData) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME_NOTE, noteData.getNote());
         mDb.insert(TABLE_NAME, null, values);
     }
 
+    @Override
     public NoteData get(long noteId) {
         Cursor cursor = mDb.query(TABLE_NAME, null, _ID + " = " + noteId,
                 null, null, null, null);
@@ -43,6 +47,7 @@ public class NotesTable implements BaseColumns {
         return noteData;
     }
 
+    @Override
     public List<NoteData> getAll() {
         List<NoteData> result = new ArrayList<>();
         Cursor cursor = mDb.rawQuery("select * from " + TABLE_NAME, null);
@@ -55,10 +60,12 @@ public class NotesTable implements BaseColumns {
         return result;
     }
 
+    @Override
     public void delete(long noteId) {
         mDb.delete(TABLE_NAME, _ID + " = " + noteId, null);
     }
 
+    @Override
     public void updateNote(long noteId, String note) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME_NOTE, note);

@@ -1,4 +1,4 @@
-package com.sabag.ronen.refactortonewarchitecturecomponents.storage;
+package com.sabag.ronen.refactortonewarchitecturecomponents.storage.notesTableImpl;
 
 public class NoteData {
 

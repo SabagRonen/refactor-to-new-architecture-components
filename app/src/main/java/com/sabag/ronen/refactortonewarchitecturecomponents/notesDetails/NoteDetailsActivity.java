@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-import com.sabag.ronen.refactortonewarchitecturecomponents.storage.NotesTable;
+import com.sabag.ronen.refactortonewarchitecturecomponents.App;
 import com.sabag.ronen.refactortonewarchitecturecomponents.R;
 
 public class NoteDetailsActivity extends AppCompatActivity
@@ -26,7 +26,7 @@ public class NoteDetailsActivity extends AppCompatActivity
         findViewById(R.id.delete).setOnClickListener(this);
         findViewById(R.id.update).setOnClickListener(this);
 
-        NoteDetailsModel model = new NoteDetailsModel(new NotesTable(this));
+        NoteDetailsModel model = new NoteDetailsModel(((App)getApplication()).getNotesTable());
         mPresenter = new NoteDetailsPresenter(this, model);
         mPresenter.loadData(mNoteId);
     }

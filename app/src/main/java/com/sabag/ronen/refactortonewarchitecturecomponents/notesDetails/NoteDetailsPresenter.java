@@ -1,6 +1,6 @@
 package com.sabag.ronen.refactortonewarchitecturecomponents.notesDetails;
 
-import com.sabag.ronen.refactortonewarchitecturecomponents.storage.NoteData;
+import com.sabag.ronen.refactortonewarchitecturecomponents.storage.notesTableImpl.NoteData;
 
 import java.lang.ref.WeakReference;
 

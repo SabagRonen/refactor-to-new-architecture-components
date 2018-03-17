@@ -1,15 +1,14 @@
 package com.sabag.ronen.refactortonewarchitecturecomponents.notesDetails;
 
-import com.sabag.ronen.refactortonewarchitecturecomponents.storage.NoteData;
-import com.sabag.ronen.refactortonewarchitecturecomponents.storage.NotesTable;
+import com.sabag.ronen.refactortonewarchitecturecomponents.storage.INotesTable;
+import com.sabag.ronen.refactortonewarchitecturecomponents.storage.notesTableImpl.NoteData;
 
 class NoteDetailsModel {
 
-    private final NotesTable mNotesTable;
+    private final INotesTable mNotesTable;
 
-    NoteDetailsModel(NotesTable notesTable) {
+    NoteDetailsModel(INotesTable notesTable) {
         mNotesTable = notesTable;
-        mNotesTable.open();
     }
 
     NoteData getNote(long noteId) {

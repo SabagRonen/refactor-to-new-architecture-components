@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sabag.ronen.refactortonewarchitecturecomponents.R;
-import com.sabag.ronen.refactortonewarchitecturecomponents.storage.NoteData;
+import com.sabag.ronen.refactortonewarchitecturecomponents.storage.notesTableImpl.NoteData;
 
 import java.util.ArrayList;
 import java.util.List;

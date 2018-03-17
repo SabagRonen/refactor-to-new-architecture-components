@@ -11,18 +11,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.sabag.ronen.refactortonewarchitecturecomponents.App;
 import com.sabag.ronen.refactortonewarchitecturecomponents.addNotes.AddNoteDialog;
 import com.sabag.ronen.refactortonewarchitecturecomponents.addNotes.AddNoteListener;
 import com.sabag.ronen.refactortonewarchitecturecomponents.notesDetails.NoteDetailsActivity;
-import com.sabag.ronen.refactortonewarchitecturecomponents.storage.NoteData;
-import com.sabag.ronen.refactortonewarchitecturecomponents.storage.NotesTable;
+import com.sabag.ronen.refactortonewarchitecturecomponents.storage.INotesTable;
+import com.sabag.ronen.refactortonewarchitecturecomponents.storage.notesTableImpl.NoteData;
 import com.sabag.ronen.refactortonewarchitecturecomponents.R;
 
 import java.util.List;
 
 public class NotesActivity extends AppCompatActivity implements AddNoteListener, OnNoteClickListener {
 
-    private NotesTable mNotesTable;
+    private INotesTable mNotesTable;
     private RecyclerView notesList;
 
     @Override
@@ -46,8 +47,7 @@ public class NotesActivity extends AppCompatActivity implements AddNoteListener,
             }
         });
 
-        mNotesTable = new NotesTable(this);
-        mNotesTable.open();
+        mNotesTable = ((App)getApplication()).getNotesTable();
         updateNotes(true);
     }
 
